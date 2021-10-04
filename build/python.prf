@@ -8,7 +8,6 @@ isEmpty( PYTHON_VERSION ) {
   unix:PYTHON_VERSION=2.7
 }
 
-message(Using Python version $${PYTHON_VERSION})
 
 macx {
   # for macx you need to have the Python development kit installed as framework
@@ -46,5 +45,4 @@ macx {
     unix:LIBS += $$system(python$${PYTHON_VERSION}-config --embed --libs)
   } else: unix:LIBS += $$system(python$${PYTHON_VERSION}-config --libs)  
   unix:QMAKE_CXXFLAGS += $$system(python$${PYTHON_VERSION}-config --includes)
-  unix:QMAKE_LFLAGS += $$system(python$${PYTHON_VERSION}-config --ldflags)
 }
